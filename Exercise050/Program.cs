@@ -8,100 +8,100 @@
 
 int[,] Generate2DArray(int m, int n, int min, int max)
 {
-    int[,] array2D = new int[m, n];
-    Random random = new Random();
-    for (int i = 0; i < array2D.GetLength(0); i++)
+  int[,] array2D = new int[m, n];
+  Random random = new Random();
+  for (int i = 0; i < array2D.GetLength(0); i++)
+  {
+    for (int j = 0; j < array2D.GetLength(1); j++)
     {
-        for (int j = 0; j < array2D.GetLength(1); j++)
-        {
-            array2D[i, j] = random.Next(min, max + 1);
-        }
+      array2D[i, j] = random.Next(min, max + 1);
     }
-    return array2D;
+  }
+  return array2D;
 }
 
 void PrintArray2D(int[,] array)
 {
-    for (int i = 0; i < array.GetLength(0); i++)
+  for (int i = 0; i < array.GetLength(0); i++)
+  {
+    Console.Write("[");
+    for (int j = 0; j < array.GetLength(1); j++)
     {
-        Console.Write("[");
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            if (j == (array.GetLength(1) - 1))
-                Console.WriteLine(String.Format("{0,4}]", array[i, j]));
-            else
-                Console.Write(String.Format("{0,4} ", array[i, j]));
-        }
+      if (j == (array.GetLength(1) - 1))
+        Console.WriteLine(String.Format("{0,4}]", array[i, j]));
+      else
+        Console.Write(String.Format("{0,4} ", array[i, j]));
     }
+  }
 }
 
 int NumberOfColumns()
 {
-    Console.Write("Ведите количество столбцов 2D массива: ");
-    int.TryParse(Console.ReadLine(), out int num);
-    while (num <= 0)
-    {
-        Console.Write("Число меньше 1! Попробуйте ещё: ");
-        int.TryParse(Console.ReadLine(), out num);
-    }
-    return num;
+  Console.Write("Ведите количество столбцов 2D массива: ");
+  int.TryParse(Console.ReadLine(), out int num);
+  while (num <= 0)
+  {
+    Console.Write("Число меньше 1! Попробуйте ещё: ");
+    int.TryParse(Console.ReadLine(), out num);
+  }
+  return num;
 }
 
 int NumberOfRows()
 {
-    Console.Write("Ведите количество строк 2D массива: ");
-    int.TryParse(Console.ReadLine(), out int num);
-    while (num <= 0)
-    {
-        Console.Write("Число меньше 1! Попробуйте ещё: ");
-        int.TryParse(Console.ReadLine(), out num);
-    }
-    return num;
+  Console.Write("Ведите количество строк 2D массива: ");
+  int.TryParse(Console.ReadLine(), out int num);
+  while (num <= 0)
+  {
+    Console.Write("Число меньше 1! Попробуйте ещё: ");
+    int.TryParse(Console.ReadLine(), out num);
+  }
+  return num;
 }
 
 int ReceiveMinMax(string minOrMax)
 {
-    Console.Write($"Введите значение {minOrMax}: ");
-    int.TryParse(Console.ReadLine(), out int result);
-    return result;
+  Console.Write($"Введите значение {minOrMax}: ");
+  int.TryParse(Console.ReadLine(), out int result);
+  return result;
 }
 
 int ColumnsPosition()
 {
-    Console.Write("Ведите номер столбца для поиска элемента массива: ");
-    int.TryParse(Console.ReadLine(), out int num);
-    while (num <= 0)
-    {
-        Console.Write("Число меньше 1! Попробуйте ещё: ");
-        int.TryParse(Console.ReadLine(), out num);
-    }
-    return num;
+  Console.Write("Ведите номер столбца для поиска элемента массива: ");
+  int.TryParse(Console.ReadLine(), out int num);
+  while (num <= 0)
+  {
+    Console.Write("Число меньше 1! Попробуйте ещё: ");
+    int.TryParse(Console.ReadLine(), out num);
+  }
+  return num;
 }
 
 int RowsPosition()
 {
-    Console.Write("Введите номер строки для поиска элемента массива: ");
-    int.TryParse(Console.ReadLine(), out int num);
-    while (num <= 0)
-    {
-        Console.Write("Число меньше 1! Попробуйте ещё: ");
-        int.TryParse(Console.ReadLine(), out num);
-    }
-    return num;
+  Console.Write("Введите номер строки для поиска элемента массива: ");
+  int.TryParse(Console.ReadLine(), out int num);
+  while (num <= 0)
+  {
+    Console.Write("Число меньше 1! Попробуйте ещё: ");
+    int.TryParse(Console.ReadLine(), out num);
+  }
+  return num;
 }
 
 void SearchElement(int[,] array2d, int row, int column)
 {
-    if (row > array2d.GetLength(0) || column > array2d.GetLength(1))
-    {
-        Console.WriteLine($"Элемента на позиции {row},{column} не существует");
-        return;
-    }
-    else
-    {
-        Console.WriteLine($"Элемент на позиции {row},{column} => {array2d[row - 1, column - 1]}");
-        return;
-    }
+  if (row > array2d.GetLength(0) || column > array2d.GetLength(1))
+  {
+    Console.WriteLine($"Элемента на позиции {row},{column} не существует");
+    return;
+  }
+  else
+  {
+    Console.WriteLine($"Элемент на позиции {row},{column} => {array2d[row - 1, column - 1]}");
+    return;
+  }
 }
 
 int m = NumberOfRows();
