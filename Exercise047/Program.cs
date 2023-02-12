@@ -6,7 +6,7 @@
 // 8 7,8 -7,1 9
 
 
-float[,] GenerateArray(int m, int n, int min, int max)
+float[,] Generate2DArray(int m, int n, int min, int max)
 {
   Random random = new Random();
   float[,] array = new float[m, n];
@@ -38,5 +38,5 @@ void PrintArray2D(float[,] array)
 }
 
 
-float[,] array = GenerateArray(3, 4, -99, 99);
+float[,] array = Generate2DArray(3, 4, -99, 99);
 PrintArray2D(array);
